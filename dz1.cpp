@@ -7,8 +7,8 @@ std::string findpref(std::vector<std::string>strings)
     std::string begining = strings[0];
     int value = strings[0].size();
     for(std::string elm:strings)
-{
-    while(!elm.starts_with(begining)&& value > 0)
+{ 
+    while(elm.find(begining) != 0 && value > 0)
     {
         value--;
         begining = strings[0].substr(0,value);
@@ -25,6 +25,7 @@ int main()
     {
         strings.push_back(phrase);
     }
-    cout<<findpref(strings);
+    std::cout<<findpref(strings);
     return 0;
 }
+
